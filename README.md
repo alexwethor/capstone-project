@@ -53,8 +53,7 @@ BigQuery was used to both preview and clean the data due to its size. For refere
 
 In order to process the data in BigQuery, I first downloaded each CSV file containing bike trip data from April 2024 to March 2025. I stored each file in a Google Cloud Storage bucket. I created a dataset called bike_trips in BigQuery and uploaded each CSV file into 12 different tables in the bike_trips dataset. 
 
-I then created a table, bike_trips_combined_data, to combine the past 12 months of bike trip history into one table. 
-
+I then created a table, bike_trips_combined_data, to combine the past 12 months of bike trip history into one table. Here is the code I used: [Combining tables code](Combine_all_tables.sql).
 
 ### Data Cleaning and Manipulation
 I first checked for any duplicate rows and found none. I also checked if there were any duplicate ride_id entries as this should be a unique value. I compared the total number of ride_id entries (5,779,568) to the total number of distinct ride_id entries (5,779,357) and found there were 211 duplicates. I gathered which ride_ids were duplicated and then further investigated why there may be duplicate ride_id entries. To do so, I sampled a ride_id to see why the ride_id field was duplicated but not the entire row. 
@@ -92,7 +91,7 @@ I then created a temporary table that had all duplicates removed and included th
 | end_lng | 6549 |
 | member_casual | 0 |
 
-I removed all rows that had null entries. I saved the table with no duplicate or null values as a temporary table so that I could check the data for any common errors or mistakes. First, I checked that the member_casual column only consisted of the two known member types: casual riders and annual members
+I removed all rows that had null entries. I saved the table with no duplicate or null values as a temporary table so that I could check the data for any common errors or mistakes. First, I checked that the member_casual column only consisted of the two known member types: casual riders and annual members.
 
 | member_casual | Count |
 | ------------- | ------- |
@@ -118,6 +117,12 @@ Now that I had a complete understand of the data and where errors or inconsisten
 - Removed instances where ride length was less than zero
 
 I stored the results in a new table called bike_trips_clean. This table had a total of 4,099,878 rows remaining and ready for analysis.
+
+Below is the code I used to clean and process the data:
+[Checking for duplicate values](Check_for_duplicate_values.sql)
+[Checking for incorrect data](Check_for_incorrect_data.sql)
+[Checking for null values](Check_for_null_values.sql)
+[Creating clean dataset](Clean_data.sql)
 
 ## Analyze & Share
 
@@ -187,6 +192,10 @@ With the analysis complete, I can address the business task of analyzing the Cyc
 2. Both annual members and casual riders use Cyclistic bikes more in the summer months and less in the winter months.
 3. Annual members take shorter, more frequent rides, whereas casual riders take longer, less frequent rides.
 4. Annual members typically begin their rides in residential and commercial locations. Casual riders typically begin their rides in areas with popular landmarks or parks.
+
+Below is the code I used to perform the calculation and analysis:
+[Calculations code](Calculations.sql)
+[Analysis code](Analysis.sql)
 
 ## Act
 
