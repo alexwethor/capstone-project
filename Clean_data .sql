@@ -1,3 +1,4 @@
+# create new table with clean data (no duplicates, no nulls, no incorrect data)
 SELECT DISTINCT
   ride_id,
   rideable_type,
