@@ -1,4 +1,3 @@
-/*
 # mean and maximum of ride length
 SELECT
 AVG(ride_length_minutes) AS avg_ride_length,
@@ -13,4 +12,4 @@ AVG(ride_length_minutes) AS avg_ride_length,
 MAX(ride_length_minutes) AS max_ride_length
 FROM `curious-helix-447421-d0.bike_trips.bike_trips_clean` 
 GROUP BY member_casual
-*/
+
