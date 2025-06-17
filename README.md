@@ -1,4 +1,4 @@
-# Google Data Analytics Capstone: Cyclistic Analysis 
+# Google Data Analytics Capstone: Cyclistic Bike-Share Analysis 
 ## Background
 
 ### Introduction
