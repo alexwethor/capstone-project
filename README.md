@@ -26,7 +26,7 @@ Analyze the Cyclistic historical bike trip data to identify trends in how casual
 ## Prepare
 
 ### Data Sources
-Bike trip data was downloaded from this link. This is public data that has been made available by Motivate International Inc. under this license. 
+Bike trip data was downloaded from this [link](https://divvy-tripdata.s3.amazonaws.com/index.html). This is public data that has been made available by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement). 
 
 Cyclistic’s previous 12 months (April 2024 - March 2025) of bike trip data will be used to analyze and identify trends. The data provided meets the criteria of “good” data, meaning it is reliable, original, comprehensive, current, and cited. The data is provided by Cyclistic and contains all information needed to understand the different ways casual riders and annual members use Cyclistic bikes. 
 
