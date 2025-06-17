@@ -53,7 +53,8 @@ BigQuery was used to both preview and clean the data due to its size. For refere
 
 In order to process the data in BigQuery, I first downloaded each CSV file containing bike trip data from April 2024 to March 2025. I stored each file in a Google Cloud Storage bucket. I created a dataset called bike_trips in BigQuery and uploaded each CSV file into 12 different tables in the bike_trips dataset. 
 
-I then created a table, bike_trips_combined_data, to combine the past 12 months of bike trip history into one table. Here is the code I used: [Combining tables code](Combine_all_tables.sql).
+I then created a table, bike_trips_combined_data, to combine the past 12 months of bike trip history into one table. Here is the code I used: 
+[Combining tables code](Combine_all_tables.sql).
 
 ### Data Cleaning and Manipulation
 I first checked for any duplicate rows and found none. I also checked if there were any duplicate ride_id entries as this should be a unique value. I compared the total number of ride_id entries (5,779,568) to the total number of distinct ride_id entries (5,779,357) and found there were 211 duplicates. I gathered which ride_ids were duplicated and then further investigated why there may be duplicate ride_id entries. To do so, I sampled a ride_id to see why the ride_id field was duplicated but not the entire row. 
@@ -108,7 +109,7 @@ Next, I checked that the rideable_type column consisted of different bike types.
 
 Then, I checked that the ride_id had a consistent length. All ride_id entries were the same length, 16 characters. 
 
-Finally,, I confirmed that the ride length previously calculated was greater than 0, as a ride length less than or equal to zero would indicate there was not a bike trip taken or error in the system. There were 137 records with this error. I confirmed the error was due to the started_at time occurring after or at the same as the ended_at time. I would recommend the reason for this error be further investigated. For this case study I decided to remove these records from the dataset to prevent these outliers from skewing the data. 
+Finally, I confirmed that the ride length previously calculated was greater than 0, as a ride length less than or equal to zero would indicate there was not a bike trip taken or error in the system. There were 137 records with this error. I confirmed the error was due to the started_at time occurring after or at the same as the ended_at time. I would recommend the reason for this error be further investigated. For this case study I decided to remove these records from the dataset to prevent these outliers from skewing the data. 
 
 Now that I had a complete understand of the data and where errors or inconsistencies were present, I created a query to clean the dataset and completed the following: 
 - Created a new dataset that included six new columns: started_at_clean, ended_t_clean, ride_length_minutes, month_start, week_start, hour_start
@@ -119,10 +120,10 @@ Now that I had a complete understand of the data and where errors or inconsisten
 I stored the results in a new table called bike_trips_clean. This table had a total of 4,099,878 rows remaining and ready for analysis.
 
 Below is the code I used to clean and process the data:
-[Checking for duplicate values](Check_for_duplicate_values.sql)
-[Checking for incorrect data](Check_for_incorrect_data.sql)
-[Checking for null values](Check_for_null_values.sql)
-[Creating clean dataset](Clean_data.sql)
+- [Checking for duplicate values](Check_for_duplicate_values.sql)
+- [Checking for incorrect data](Check_for_incorrect_data.sql)
+- [Checking for null values](Check_for_null_values.sql)
+- [Creating clean dataset](Clean_data.sql)
 
 ## Analyze & Share
 
@@ -194,8 +195,8 @@ With the analysis complete, I can address the business task of analyzing the Cyc
 4. Annual members typically begin their rides in residential and commercial locations. Casual riders typically begin their rides in areas with popular landmarks or parks.
 
 Below is the code I used to perform the calculation and analysis:
-[Calculations code](Calculations.sql)
-[Analysis code](Analysis.sql)
+- [Calculations code](Calculations.sql)
+- [Analysis code](Analysis.sql)
 
 ## Act
 
