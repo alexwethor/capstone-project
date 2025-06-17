@@ -1,4 +1,3 @@
-/* 
 # Check how many total rows there are. Result: 5,779,568
 SELECT
 *
@@ -28,6 +27,5 @@ HAVING
 SELECT *
 FROM curious-helix-447421-d0.bike_trips.bike_trips_combined_data
 WHERE ride_id = '1B57E6F3A5495300'
-*/
 
 
