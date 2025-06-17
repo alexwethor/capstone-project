@@ -50,7 +50,6 @@ WITH temp_table AS (
     AND end_station_name IS NOT NULL
 )
 
-/*
 # Check the member_casual column for the two expected groups: memeber vs casual
 SELECT
 member_casual,
@@ -84,4 +83,3 @@ started_at,
 ended_at,
 FROM temp_table
 WHERE started_at >= ended_at
-*/
