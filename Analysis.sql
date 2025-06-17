@@ -1,4 +1,3 @@
-/*
 # number of trips taken and average trip length per month based on member type
 SELECT 
 member_casual,
@@ -56,4 +55,3 @@ FROM `curious-helix-447421-d0.bike_trips.bike_trips_clean`
 GROUP BY member_casual, start_station_name
 ORDER BY num_rides DESC
 LIMIT 20
-*/
