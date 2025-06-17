@@ -54,7 +54,7 @@ BigQuery was used to both preview and clean the data due to its size. For refere
 In order to process the data in BigQuery, I first downloaded each CSV file containing bike trip data from April 2024 to March 2025. I stored each file in a Google Cloud Storage bucket. I created a dataset called bike_trips in BigQuery and uploaded each CSV file into 12 different tables in the bike_trips dataset. 
 
 I then created a table, bike_trips_combined_data, to combine the past 12 months of bike trip history into one table. Here is the code I used: 
-[Combining tables code](Combine_all_tables.sql).
+[Combining tables code](code/Combine_all_tables.sql).
 
 ### Data Cleaning and Manipulation
 I first checked for any duplicate rows and found none. I also checked if there were any duplicate ride_id entries as this should be a unique value. I compared the total number of ride_id entries (5,779,568) to the total number of distinct ride_id entries (5,779,357) and found there were 211 duplicates. I gathered which ride_ids were duplicated and then further investigated why there may be duplicate ride_id entries. To do so, I sampled a ride_id to see why the ride_id field was duplicated but not the entire row. 
@@ -120,10 +120,10 @@ Now that I had a complete understand of the data and where errors or inconsisten
 I stored the results in a new table called bike_trips_clean. This table had a total of 4,099,878 rows remaining and ready for analysis.
 
 Below is the code I used to clean and process the data:
-- [Checking for duplicate values](Check_for_duplicate_values.sql)
-- [Checking for incorrect data](Check_for_incorrect_data.sql)
-- [Checking for null values](Check_for_null_values.sql)
-- [Creating clean dataset](Clean_data.sql)
+- [Checking for duplicate values](code/Check_for_duplicate_values.sql)
+- [Checking for incorrect data](code/Check_for_incorrect_data.sql)
+- [Checking for null values](code/Check_for_null_values.sql)
+- [Creating clean dataset](code/Clean_data.sql)
 
 ## Analyze & Share
 
@@ -133,7 +133,7 @@ I used BigQuery to analyze the data and Tableau Public to visualize it.
 ### Data Analysis
 I began my analysis by understanding what percent of the dataset was represented by casual riders versus annual members. Below is the breakdown of the dataset:
 
-![image](total_number_of_casual_rides_vs_member_rides.png)
+![image](images/total_number_of_casual_rides_vs_member_rides.png)
 
 Out of 4,099,878 total rides over the year, 63% were by annual members, while 37% were by casual riders. 
 
@@ -147,44 +147,44 @@ Next, I completed some basic calculations to understand how different member typ
 
 On average, casual riders take longer rides than annual members, however they take fewer riders overall. To investigate this further, I analyzed the total number of rides and average ride length by member type. I broke down the analysis by month, day of the week, and hour of the day to better understand how casual riders and annual members use Cyclistic bikes differently. 
 
-![image](monthly_number_of_rides.png)
+![image](images/monthly_number_of_rides.png)
 
 Annual members use Cyclistic bikes more frequently than casual riders across all months of the year. However, both member types exhibit similar riding behavior, with more rides occurring in the summer months (June through September) and less rides in the winter months (December through February). 
 
-![image](monthly_average_ride_length.png)
+![image](images/monthly_average_ride_length.png)
 
 On average, casual riders take longer rides than annual members across all months of the year. Casual riders take longer rides in the summer months and shorter rides in the winter months. Annual members, on the other hand, have a more consistent average ride length over all months of the year. 
 
-![image](daily_number_of_rides.png)
+![image](images/daily_number_of_rides.png)
 
 Casual riders and annual members favor different days of the week. Annual members take more rides during the week days, with Wednesday having the highest number of rides. Casual riders take more rides during the weekends, with Saturday having the highest number of rides. This indicates that annual members are using Cyclistic bikes to commute to/from work, whereas casual riders are using Cyclistic bikes for leisure during the weekends. 
 
-![image](daily_average_ride_length.png)
+![image](images/daily_average_ride_length.png)
 
 Casual riders take longer rides during the weekends than the weekdays.  Annual members have a more consistent average ride length across all days of the week. 
 
-![image](hourly_number_of_rides.png)
+![image](images/hourly_number_of_rides.png)
 
 Both casual riders and annual members take the most rides in the late afternoon, with 5 pm being the most popular ride time. The number of trips taken by casual riders increases consistently throughout the day until the evening. This differs from annual riders, whose ride frequency peaks in the morning, from 6 am to 9 am, as well as the evening, from 4 pm to 6 pm. This trend supports the conclusion that annual members are using Cyclistic bikes to commute to and from work whereas casual riders are using Cyclistic bikes for leisure activities during the day. 
 
-![image](hourly_average_ride_length.png)
+![image](images/hourly_average_ride_length.png)
 
 Casual riders take longer rides during the day and shorter rides in the morning. Annual members have a more consistent average ride length across the different times of day. 
 
 I now have insights into how casual riders and annual members use Cyclistic bikes differently based on the month, day of week, and hour of the day. To strengthen my analysis, I identified additional differences between member types based on bike type, start station use, and end station use.
 
-![image](number_of_rides_by_bike_type.png)
+![image](images/number_of_rides_by_bike_type.png)
 
 Both annual members and casual riders most frequently use the classic bike and least frequently use the electric scooter. 
 
-![image](number_of_rides_for_top_10_start_stations.png)
+![image](images/number_of_rides_for_top_10_start_stations.png)
 
 An analysis of the top start stations revealed clear differences between casual riders and annual members. Casual riders use start stations near Chicago landmarks and monuments. For example, the top start station used by causal riders, Streeter Dr & Grand Ave, is an intersection near Navy Pier, a popular Chicago landmark. Furthermore, more recognizable names such as Michigan Ave and Millennium park appear in the top 5 start stations used by casual riders. On the other hand, annual members use start stations in more residential and commercial areas. For example, the top start station used by annual members, Kingsbury St & Kinzie St, is a popular residential area. 
 
 I also mapped the start station use between the different member types. The first map shows the distribution of start station use by annual members while the second map shows the distribution of start station use by casual riders. 
 
-![image](members_start_station_map.png)
-![image](casual_riders_start_station_map.png)
+![image](images/members_start_station_map.png)
+![image](images/casual_riders_start_station_map.png)
 
 The maps show that annual members use start stations all across Chicago, including many in the suburban areas. Casual members use start stations more heavily concentrated within the Chicago area. This further supports the conclusion that casual riders are using Cyclistic bikes for leisurely activities such as visiting popular Chicago landmarks and parks whereas annual members are using Cyclistic bikes for commuting to and from work, starting their ride in residential and commercial locations. 
 
@@ -195,8 +195,8 @@ With the analysis complete, I can address the business task of analyzing the Cyc
 4. Annual members typically begin their rides in residential and commercial locations. Casual riders typically begin their rides in areas with popular landmarks or parks.
 
 Below is the code I used to perform the calculation and analysis:
-- [Calculations code](Calculations.sql)
-- [Analysis code](Analysis.sql)
+- [Calculations code](code/Calculations.sql)
+- [Analysis code](code/Analysis.sql)
 
 ## Act
 
