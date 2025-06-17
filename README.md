@@ -127,7 +127,7 @@ I used BigQuery to analyze the data and Tableau Public to visualize it.
 ### Data Analysis
 I began my analysis by understanding what percent of the dataset was represented by casual riders versus annual members. Below is the breakdown of the dataset:
 
-(insert image)
+![image](total number of casual rides vs member rides.png)
 
 Out of 4,099,878 total rides over the year, 63% were by annual members, while 37% were by casual riders. 
 
@@ -141,44 +141,44 @@ Next, I completed some basic calculations to understand how different member typ
 
 On average, casual riders take longer rides than annual members, however they take fewer riders overall. To investigate this further, I analyzed the total number of rides and average ride length by member type. I broke down the analysis by month, day of the week, and hour of the day to better understand how casual riders and annual members use Cyclistic bikes differently. 
 
-(insert image)
+![image](monthly number of rides.png)
 
 Annual members use Cyclistic bikes more frequently than casual riders across all months of the year. However, both member types exhibit similar riding behavior, with more rides occurring in the summer months (June through September) and less rides in the winter months (December through February). 
 
-(insert image)
+![image](monthly average ride length.png)
 
 On average, casual riders take longer rides than annual members across all months of the year. Casual riders take longer rides in the summer months and shorter rides in the winter months. Annual members, on the other hand, have a more consistent average ride length over all months of the year. 
 
-(insert image)
+![image](daily number of rides.png)
 
 Casual riders and annual members favor different days of the week. Annual members take more rides during the week days, with Wednesday having the highest number of rides. Casual riders take more rides during the weekends, with Saturday having the highest number of rides. This indicates that annual members are using Cyclistic bikes to commute to/from work, whereas casual riders are using Cyclistic bikes for leisure during the weekends. 
 
-(insert image)
+![image](daily average ride length.png)
 
 Casual riders take longer rides during the weekends than the weekdays.  Annual members have a more consistent average ride length across all days of the week. 
 
-(insert image)
+![image](hourly number of rides.png)
 
 Both casual riders and annual members take the most rides in the late afternoon, with 5 pm being the most popular ride time. The number of trips taken by casual riders increases consistently throughout the day until the evening. This differs from annual riders, whose ride frequency peaks in the morning, from 6 am to 9 am, as well as the evening, from 4 pm to 6 pm. This trend supports the conclusion that annual members are using Cyclistic bikes to commute to and from work whereas casual riders are using Cyclistic bikes for leisure activities during the day. 
 
-(insert image)
+![image](hourly average ride length.png)
 
 Casual riders take longer rides during the day and shorter rides in the morning. Annual members have a more consistent average ride length across the different times of day. 
 
 I now have insights into how casual riders and annual members use Cyclistic bikes differently based on the month, day of week, and hour of the day. To strengthen my analysis, I identified additional differences between member types based on bike type, start station use, and end station use.
 
-(insert image)
+![image](number of rides by bike type.png)
 
 Both annual members and casual riders most frequently use the classic bike and least frequently use the electric scooter. 
 
-(insert image)
+![image](number of rides for top 10 start stations.png)
 
 An analysis of the top start stations revealed clear differences between casual riders and annual members. Casual riders use start stations near Chicago landmarks and monuments. For example, the top start station used by causal riders, Streeter Dr & Grand Ave, is an intersection near Navy Pier, a popular Chicago landmark. Furthermore, more recognizable names such as Michigan Ave and Millennium park appear in the top 5 start stations used by casual riders. On the other hand, annual members use start stations in more residential and commercial areas. For example, the top start station used by annual members, Kingsbury St & Kinzie St, is a popular residential area. 
 
 I also mapped the start station use between the different member types. The first map shows the distribution of start station use by annual members while the second map shows the distribution of start station use by casual riders. 
 
-(insert image)
-(insert image)
+![image](members start station map.png)
+![image](casual riders start station map.png)
 
 The maps show that annual members use start stations all across Chicago, including many in the suburban areas. Casual members use start stations more heavily concentrated within the Chicago area. This further supports the conclusion that casual riders are using Cyclistic bikes for leisurely activities such as visiting popular Chicago landmarks and parks whereas annual members are using Cyclistic bikes for commuting to and from work, starting their ride in residential and commercial locations. 
 
