@@ -112,8 +112,8 @@ Then, I checked that the ride_id had a consistent length. All ride_id entries we
 Finally, I confirmed that the ride length previously calculated was greater than 0, as a ride length less than or equal to zero would indicate there was not a bike trip taken or error in the system. There were 137 records with this error. I confirmed the error was due to the started_at time occurring after or at the same as the ended_at time. I would recommend the reason for this error be further investigated. For this case study I decided to remove these records from the dataset to prevent these outliers from skewing the data. 
 
 Now that I had a complete understanding of the data and where errors or inconsistencies were present, I created a query to clean the dataset and completed the following: 
-- Created a new dataset that included six new columns: started_at_clean, ended_t_clean, ride_length_minutes, month_start, week_start, hour_start
-- Removed any rows with null values
+- Created a new dataset that included six new columns: started_at_clean, ended_at_clean, ride_length_minutes, month_start, week_start, hour_start
+- Removed rows with null values
 - Removed duplicate ride_id entries
 - Removed instances where ride length was less than zero
 
